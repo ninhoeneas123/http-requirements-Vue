@@ -6,12 +6,18 @@
   </head>
     <body>
       <div id="app">
+       <div style="text-align: center;"> 
+        <h1>{{titulo}}</h1> <br>
 
-       <h1>{{titulo}}</h1> <br>
+        <h2>Lista de Usuarios</h2><br>
         <button @click.stop.prevent="getUsers()">Get users </button>
+       </div>
 <br>
 <br>
+         
+ 
      <div v-for="user in users">
+        id:{{user.id}}<br>
         Nome:{{user.name}}<br>
         Username:{{user.username}}<br>
         Email{{user.email}}<br>
@@ -40,7 +46,7 @@
          el:"#app",
          mixins:[mixin],
          data:{
-             titulo:[nome='Consumo com Vue-resource'],
+             titulo:'Consumo com Vue-resource',
              users:[]
          }
       });

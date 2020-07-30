@@ -2,23 +2,34 @@
 
 <html>
   <head>
+   <meta charset="utf-8">
 
   </head>
     <body>
-      <div id="app">
-
-       <h1>{{titulo}}</h1> <br>
+     <div id="app">
+         
+      <div style="text-align: center;">
+         <h1>{{titulo}}</h1> <br>
+  
+        <h2>Lista de Usuarios</h2>
         <button @click.stop.prevent="getUsers()">Get users </button>
+      </div>
 <br>
-<br>
-     <div v-for="user in users">
-        Id:{{user.id}}<br>
-        Nome:{{user.name}}<br>
-        Username:{{user.username}}<br>
-        Email{{user.email}}<br>
-        <hr>
-     </div>
+<br>   <div style="margin-left: 150px;">
+        <div v-for="user in users">
+          Id: {{user.id}}<br>
+          Nome: {{user.name}}<br>
+          Username: {{user.username}}<br>
+          Email: {{user.email}}<br>
+          <br>
+          <b>Endereço</b><br>
+          <br>
+          Rua: {{user.address.street}}<br>
+          cidade:{{user.address.city}}
+          <hr>
         </div>
+      </div>
+      </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.1"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
